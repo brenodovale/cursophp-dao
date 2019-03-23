@@ -27,14 +27,25 @@
 	//Carrega um lista de usuarios buscando pelo login
 	$search = Usuario::search("b");
 	echo json_encode($search);
-*/
+
 
 	//Carrega um usuario usando o login e a senha
-
 	$usuario = new Usuario();
 	$usuario->login("root","123456");
-
 	echo $usuario;
 
+
+	//Criando um novo usario
+	$aluno = new Usuario("tiago", "ti09232");
+	$aluno->insert();
+	echo $aluno;
+
+*/
+
+	$usuario = new Usuario();
+
+	$usuario->loadById(8);
+
+	$usuario->update("professor", "!@#$%&");
 	
  ?>
